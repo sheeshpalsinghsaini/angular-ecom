@@ -14,6 +14,8 @@ import { ServicesComponent } from './components/services/services.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { ProfileComponent } from './components/profile/profile.component';
     ServicesComponent,
     LoginComponent,
     SignupComponent,
-    ProfileComponent
+    ProfileComponent,
+    CustomNavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
