@@ -1,22 +1,34 @@
-
-
 <div class="container">
-    <h2> Login here !!!!!!!!</h2>
 
-    <table>
-        <tr>
-            <td>Enter your name</td>
-            <td> <input type="text" placeholder="Enter your name"> </td>
-        </tr>
-        <tr>
-            <td>Enter your email</td>
-            <td> <input type="email" placeholder="Enter your email"> </td>
-        </tr>
+    <!-- in each row 12 grids -->
 
-        <tr>
-            <td colspan="2" style="text-align:center;">
-                <button>Login</button>
-            </td>
-        </tr>
-    </table>
+    <div class="col-md-6 offset-md-3">
+
+        <div class="card mt-5 border border-0 shadow-lg">
+            <div class="card-body">
+                <h3 class="my-3"> Login here </h3>
+
+                <form action="#">
+
+                    <!-- email field  -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Email address</label>
+                        <input type="email" class="form-control rounded-0" id="username" aria-describedby="emailHelp" placeholder="Enter your username">
+                    </div>
+
+                    <!-- password field  -->
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label"> Password </label>
+                        <input type="password" class="form-control rounded-0" id="password" aria-describedby="emailHelp" placeholder="Enter your password">
+                    </div>
+
+                    <div class="container ">
+                        <button class="btn btn-primary m-3"> Login </button>
+                        <button class="btn btn-warning "> Reset </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
