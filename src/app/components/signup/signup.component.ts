@@ -44,6 +44,9 @@ export class SignupComponent implements OnInit {
       if(error.status==400){
         alert("validation error")
       }
+      
+    },()=>{
+      console.log("completed");
     })
 
 
