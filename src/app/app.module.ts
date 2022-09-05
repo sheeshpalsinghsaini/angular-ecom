@@ -18,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +29,20 @@ import {HttpClientModule} from '@angular/common/http'
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    CustomNavbarComponent
+    CustomNavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass:'toast-bottom-right'// it set the position of toastr msg.
+    }),
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

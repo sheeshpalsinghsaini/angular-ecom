@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class SignupComponent implements OnInit {
     phone:'',
     gender:''
   }
-  constructor(private userService:UserService) { }
+
+  // we are injecting/autowire UserService and ToastrService here.
+  constructor(private userService:UserService, private toast:ToastrService) { }
 
 
   // sun on submiting the form 
@@ -28,21 +31,30 @@ export class SignupComponent implements OnInit {
     console.log(this.user);
 
     if(this.user.name.trim()===''){
-        alert("username is blank!!")
+        this.toast.error("username is blank!!")
         return;
     }else if(this.user.email.trim()===''){
-      alert("email is blank!!")
+      this.toast.error("email is blank!!")
       return;
     }
 
     //form submit
     this.userService.createUser(this.user).subscribe((success)=>{
       console.log(success)
-      alert("User is registered successfully!!")
+      this.toast.success("User is registered successfully!!")
     },(error)=>{
       console.log(error)
       if(error.status==400){
-        alert("validation error")
+        console.log(error.error);   //by this we can got all the object of error.
+
+        let msg = ``;
+        for(let i in error.error){
+         // console.log(i+" "+error.error[i]);
+         msg = msg + ` ${error.error[i]} <br>`
+        }
+        this.toast.error(msg,'',{
+          enableHtml:true
+        })
       }
       
     },()=>{
