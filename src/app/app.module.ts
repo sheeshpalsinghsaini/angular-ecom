@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SignupComponent,
     ProfileComponent,
     CustomNavbarComponent,
+    UserDashboardComponent,
 
   ],
   imports: [
