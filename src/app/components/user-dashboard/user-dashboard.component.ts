@@ -19,12 +19,14 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.isLogin = this.authHelper.checkLogin()   //if user login, make it true.
-    this.user = this.isLogin?this.authHelper.getCurrentUser():null  //assign in user
+    //this.isLogin = this.authHelper.checkLogin()   //if user login, make it true.
+    //this.user = this.isLogin?this.authHelper.getCurrentUser():null  //assign in user
 
+    this.updateLoginDetails()
    this.authHelper.loginLogoutEmitter.subscribe(value=>{
-    this.isLogin = this.authHelper.checkLogin()
-    this.user = this.isLogin?this.authHelper.getCurrentUser():null 
+    //this.isLogin = this.authHelper.checkLogin()
+    //this.user = this.isLogin?this.authHelper.getCurrentUser():null 
+    this.updateLoginDetails()
    })
 
 
@@ -36,6 +38,11 @@ export class UserDashboardComponent implements OnInit {
     this.authHelper.logout()
     //this.isLogin=false
     //this.user = null
+  }
+
+  updateLoginDetails(){
+    this.isLogin = this.authHelper.checkLogin()
+    this.user = this.isLogin?this.authHelper.getCurrentUser():null
   }
 
 }

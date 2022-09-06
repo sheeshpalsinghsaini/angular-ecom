@@ -18,13 +18,13 @@ export class CustomNavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.isLogin = this.authHelper.checkLogin()
-    this.user = this.isLogin?this.authHelper.getCurrentUser():null
+    //this.isLogin = this.authHelper.checkLogin()
+    //this.user = this.isLogin?this.authHelper.getCurrentUser():null
+
+    this.updateLoginDetails()
 
    this.authHelper.loginLogoutEmitter.subscribe(value=>{
-    
-    this.isLogin = this.authHelper.checkLogin()
-    this.user = this.isLogin?this.authHelper.getCurrentUser():null
+      this.updateLoginDetails()    
    })
     
   }
@@ -35,4 +35,9 @@ export class CustomNavbarComponent implements OnInit {
 
   }
 
+  updateLoginDetails(){
+
+    this.isLogin = this.authHelper.checkLogin()
+    this.user = this.isLogin?this.authHelper.getCurrentUser():null
+  }
 }
