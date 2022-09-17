@@ -8,6 +8,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserDashboardGuard } from './guards/user-dashboard.guard';
+import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
     path:'dashboard',
     component:UserDashboardComponent,
     canActivate:[UserDashboardGuard]
+},
+{
+    path:'store',
+    component:StoreComponent
 }
 ];
 

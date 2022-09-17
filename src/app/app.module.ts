@@ -21,6 +21,8 @@ import {HttpClientModule} from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { StoreComponent } from './components/store/store.component';
+import { ProductComponent } from './components/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     ProfileComponent,
     CustomNavbarComponent,
     UserDashboardComponent,
+    StoreComponent,
+    ProductComponent,
 
   ],
   imports: [
